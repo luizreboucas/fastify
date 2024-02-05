@@ -1,13 +1,7 @@
-/* // CommonJs
-const fastify = require('fastify')({
-    logger: true
-}) */
-
-// ESM
 import Fastify from 'fastify'
 
 const fastify = Fastify({
-    logger: true
+    logger: false
   })
 
 const PORT = 5005
