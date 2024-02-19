@@ -16,7 +16,11 @@ export const produtoService = {
         return produtos.push(produtoReq)
     },
     atualizarProduto: (req, res) => {
-
+        const produtoId = req.params.id
+        const produtoAtualizado = req.body
+        const produto = {...produtoAtualizado, id: produtoId}
+        const index = produto.indexOf(produtos.find((produto) => produto.id === produtoId))
+        return produtos.slice(index , 1, produto)
     },
     removerProduto: (req, res) => {
 
